@@ -3,8 +3,12 @@
 import { useEffect } from "react";
 import { Html5Qrcode } from "html5-qrcode";
 
-export default function QRScanner() {
+const Html5QrcodePlugin = ({ scan }) => {
     useEffect(() => {
+        if (!scan) {
+            return;
+        }
+
         const scanner = new Html5Qrcode("qr-reader");
 
         let mounted = true;
@@ -51,7 +55,10 @@ export default function QRScanner() {
                     .catch(() => {});
             }
         };
-    }, []);
+    }, [scan]);
 
-    return <div id="qr-reader" />;
+    return (<div id="qr-reader" />);
 }
+
+export { Html5QrcodePlugin };
+
