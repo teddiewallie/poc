@@ -1,5 +1,7 @@
+"use client"
+
 import { useState } from "react";
-import { Html5QrcodePlugin } from "Html5QrcodePlugin";
+import { Html5QrcodePlugin } from "./Html5QrcodePlugin";
 import { Button } from "@/components/ui/button.jsx";
 
 const Html5QrcodeWrapper = () => {

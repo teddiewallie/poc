@@ -1,11 +1,8 @@
-import { ThemeProvider } from "next-themes";
-import { Login } from "@/components/react/Login";
+import { Html5QrcodeWrapper } from "@/components/react/Html5QrcodeWrapper";
 
 export default function Home() {
     return (
-        <>
-            <Login />
-        </>
+        <Html5QrcodeWrapper />
     );
 }
 
