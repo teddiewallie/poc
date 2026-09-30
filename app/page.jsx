@@ -4,8 +4,6 @@ import { Html5QrcodeWrapper } from "@/components/Html5QrcodeWrapper";
 import { useState } from "react";
 
 const Page = () => {
-  const router = useRouter();
-
   const [result, setResult] = useState("");
 
   const onScan = (result) => {
