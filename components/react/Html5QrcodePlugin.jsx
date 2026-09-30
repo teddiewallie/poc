@@ -3,7 +3,13 @@
 import { useEffect } from "react";
 import { Html5Qrcode } from "html5-qrcode";
 
-const Html5QrcodePlugin = ({ scan }) => {
+const Html5QrcodePlugin = ({
+  scan,
+  fps = 10,
+  qrbox = 250,
+  disableFlip = false,
+  qrCodeSuccessCallback
+}) => {
     useEffect(() => {
         if (!scan) {
             return;
@@ -19,12 +25,11 @@ const Html5QrcodePlugin = ({ scan }) => {
                 await scanner.start(
                     { facingMode: "environment" },
                     {
-                        fps: 10,
-                        qrbox: 250,
+                        fps,
+                        qrbox,
+                        disableFlip
                     },
-                    (decodedText) => {
-                        console.log("Scanned:", decodedText);
-                    },
+                    qrCodeSuccessCallback,
                     () => {
                         // Ignore failed scans
                     }
